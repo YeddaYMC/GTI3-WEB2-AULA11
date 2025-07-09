@@ -1,0 +1,48 @@
+1. Faça um Web Service (WS) básico que permita realizar as quatro operações básicas de manipulação CRUD
+em uma tabela em um banco de dados.
+• O banco e a tabela são de sua escolha (pessoas, livros, carros, clientes, etc.).
+• O WS deve possuir pelo menos 5 recursos:
+– Cadastrar um novo registro na tabela
+– Atualizar um registro existente na tabela
+– Deletar um registro existente na tabela
+– Visualizar um registro existente na tabela
+– Visualizar todos os registros existentes na tabela (com um limite ou não)
+• O WS pode ser construído através de qualquer linguagem de programação (não necessariamente PHP);
+• O WS deve obrigatoriamente retornar uma saída em JSON ou XML;
+• O WS não precisa seguir uma arquitetura específica (SOAP, RESTful, etc.)
+• Sugestões durante o desenvolvimento (todas opcionais):
+– Crie um arquivo de conexão com o banco de dados e use-o (inclua-o) em todas as demais páginas
+do Web Service.
+– Separe as diferentes funções do Web Service em diferentes pastas ou diferentes funções (por
+exemplo, uma pasta ("read" ou "get") para todas as funções que fazem apenas leitura de dados.
+– Nas páginas que implementarão os Web Services, primeiro faça funcionar, depois refine as regras
+lógicas. Por exemplo, primeiro faça o cadastro/atualização funcionar corretamente em uma
+situação ideal (onde há todos os dados informados corretamente), depois se preocupe em validar
+as entradas do cliente.
+– Na página de visualização de registros, é possível utilizar expressões lógicas para verificar se será
+exibido um ou todos os registros, eventualmente utilizando maneiras diferentes de solicitar o
+recurso (lembre-se que é você quem cria as regras de acesso aos recursos)
+– A maneira mais simples de implementar o Web Service é utilizar a solicitação de recursos apenas
+via GET, ou seja, informando todas as informações na própria URL do recurso. Apesar de isso ferir
+os requisitos RESTful, permite que você teste todas as funções do WS diretamente pelo navegador
+informando diferentes URLs.
+– A maneira mais simples de retornar um formato de dados padrão utilizando o PHP é através da
+função nativa json_encode(), sendo necessário apenas passar para ela um array (que pode ser
+diretamente o resultado formatado do banco de dados).
+– Se quiser implementar uma estratégia RESTful, você precisa se atentar principalmente em dois
+requisitos mais complicados de serem obtidos naturalmente:
+▪ Primeiro: Permitir cache de resultados: Depende do recurso. Por exemplo, você pode ter
+campos de controle de cache, que verificam se um determinado recurso já foi solicitado e
+segue inalterado; nesse caso, não há necessidade de reprocessar a requisição, mas apenas
+reenviar a resposta.
+▪ Segundo: Utilizar os verbos HTML corretos: POST, GET, PUT e DELETE para as operações
+CRUD, respectivamente. Perceba que a utilização do GET é natural via URL e a do POST é
+tratada diretamente por um formulário HTML, por exemplo. Utilizar PUT e DELETE depende
+da implementação e normalmente envolve construir o cabeçalho HTTP manualmente. Se
+quiser se aventurar, dê uma olhada no Software Postman, que pode ajudar a simular
+requisições HTTP.
+▪ Adicionalmente, você pode desejar criar recursos com um formato mais padronizado (com
+URLs mais amigáveis, sem extensões de arquivos, etc.). Para isso, você pode utilizar regras
+de reescrita de URL controladas pelo Servidor Web (Apache, por exemplo). As regras e a
+maneira de controlá-las são variadas, mas comumente são construídas através de
+expressões regulares, com pelo menos uma regra para cada recurso.

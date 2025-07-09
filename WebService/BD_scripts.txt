@@ -1,0 +1,25 @@
+Endereço do phpMyAdmin para este projeto:
+http://localhost/phpmyadmin/index.php?route=/database/structure&db=aps2+crud+login
+
+### Script 1: Criação da Tabela `clientes`
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefone VARCHAR(20),
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+---
+
+### Script 2: Inserção de Dados Iniciais
+
+TRUNCATE TABLE clientes;
+
+INSERT INTO clientes (nome, email, telefone) VALUES
+('Ana', 'ana@email.com', '(41) 99999-0001'),
+('Beatriz', 'beatriz@email.com', '(41) 99999-0002'),
+('Cláudio', 'claudio@email.com', '(41) 99999-0003'),
+('Daniela', 'daniela@email.com', '(41) 99999-0004'),
+('Ernani', 'ernani@email.com', '(41) 99999-0005');

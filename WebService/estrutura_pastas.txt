@@ -1,0 +1,26 @@
+Comando para gerar esta estrutura: tree /f
+---
+
+Estrutura de Pastas e Arquivos do Projeto
+==========================================
+
+C:.
+│   .htaccess
+│   anotacoes_bd.txt
+│   index.html
+│   instrucoes.txt
+│
+├───api
+│   │   auth_check.php
+│   │
+│   ├───clientes
+│   │       index.php
+│   │
+│   └───config
+│           database.php
+│
+├───css
+│       estilos.css
+│
+└───js
+        main.js

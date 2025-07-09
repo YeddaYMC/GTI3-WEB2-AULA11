@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Service - Clientes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gerenciador de Clientes</h1>
+
+        <!-- Formulário para Adicionar/Editar Cliente -->
+        <div class="form-container">
+            <form id="form-cliente">
+                <input type="hidden" id="cliente-id">
+                <input type="text" id="nome" placeholder="Nome completo" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="tel" id="telefone" placeholder="Telefone">
+                <button type="submit" id="btn-salvar">Adicionar Cliente</button>
+                <button type="button" id="btn-cancelar" class="hidden">Cancelar Edição</button>
+            </form>
+        </div>
+
+        <!-- Campo de Busca -->
+        <div class="search-container">
+            <input type="search" id="campo-busca" placeholder="Buscar cliente por nome...">
+        </div>
+
+        <!-- Tabela para Listar os Clientes -->
+        <h2>Lista de Clientes</h2>
+        <table id="tabela-clientes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas da tabela serão inseridas aqui via JavaScript -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
